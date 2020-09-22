@@ -1,10 +1,12 @@
 #  Luodaan State Machine ja sen vaiheet
-#  Toistaiseksi toteutus vielä malliesimerkki, mutta definition voi liittää lopullisen muodon.
+
 #  Tällä hetkellä tehdyt kokeilut oikeasta toteutuksesta löytyy eu-central-1 Kati-Test-Machine
 
 resource "aws_sfn_state_machine" "sentimental_analysis_state_machine" {
   name = "sentimental-analysis-state-machine"
   role_arn = aws_iam_role.role_for_state_machine_sentimental_analysis.arn
+
+  #  Toistaiseksi definition vielä malliesimerkki, mutta tähän voi liittää State Machinen lopullisessa muodossa.
   definition = <<EOF
   {
     "Comment": "Doing sentimental analysis on the customer review with Amazon Comprehend.

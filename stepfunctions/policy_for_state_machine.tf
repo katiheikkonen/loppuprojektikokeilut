@@ -16,7 +16,7 @@ data "aws_iam_policy_document" "state_machine_policy_document" {
     ]
     resources = [
       "arn:aws:lambda:eu-central-1:821383200340:function:analyze_with_comprehend"
-      # tähän lisätään vielä kaikki muut tarvittavat Lambdat
+      # tähän lisätään vielä kaikki muut tarvittavat Lambdat, joita State Machine käyttää (viittaus eikä kovakoodattuna)
     ]
   }
 }
