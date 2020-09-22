@@ -10,6 +10,9 @@ s3 = boto3.resource('s3')
 
 
 def sentimental_analysis(event, context):
+
+    #  NÄIDEN HAKEMINEN STEP FUNCTIONS TRIGGERISTÄ
+
     # Poimitaan S3sta tulevasta eventistä..
     s3_trigger = event['Records']
     # Uuden tiedoston nimi, sekä
@@ -36,4 +39,4 @@ def sentimental_analysis(event, context):
     return {
         "statusCode": 200,
         "body": json.dumps(reply)
-}
+    }
